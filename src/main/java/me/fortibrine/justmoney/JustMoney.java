@@ -3,6 +3,8 @@ package me.fortibrine.justmoney;
 import me.fortibrine.justmoney.commands.BalanceCommand;
 import me.fortibrine.justmoney.commands.MainCommand;
 import me.fortibrine.justmoney.commands.PayCommand;
+import me.fortibrine.justmoney.utils.Expansion;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -28,6 +30,10 @@ public class JustMoney extends JavaPlugin {
         this.getCommand("justmoney").setExecutor(new MainCommand());
         this.getCommand("balance").setExecutor(new BalanceCommand());
         this.getCommand("pay").setExecutor(new PayCommand());
+
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new Expansion().register();
+        }
     }
 
 }
