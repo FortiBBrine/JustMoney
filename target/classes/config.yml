@@ -1,0 +1,33 @@
+balances: {}
+maincommand:
+  usage:
+    - "Руководство по использованию плагина JustMoney:"
+    - " - /justmoney pay [Никнейм] [Количество]"
+    - " - /justmoney set [Никнейм] [Количество]"
+    - " - /justmoney get [Никнейм]"
+  pay:
+    - "Отправлено игроку %player %amount."
+  set:
+    - "Установлено игроку %player баланс %amount"
+  get:
+    - "У игрока %player баланс %amount"
+  without_permission:
+    - "У вас недостаточно прав!"
+not_player:
+  - "Вы не игрок"
+
+balance:
+  get:
+    - "У вас баланс %amount"
+  without_permission:
+    - "У вас недостаточно прав!"
+
+pay:
+  names_equals:
+    - "Вы не можете отправить сами себе"
+  usage:
+    - "/pay [Никнейм] [Количество]"
+  pay:
+    - "Отправлено игроку %player %amount."
+  without_permission:
+    - "У вас недостаточно прав!"

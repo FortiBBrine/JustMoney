@@ -1,0 +1,27 @@
+name: JustMoney
+version: '1.0'
+main: me.fortibrine.justmoney.JustMoney
+api-version: 1.16
+
+commands:
+  justmoney:
+    aliases:
+      - justmoney
+      - jm
+      - money
+    description: "Команда для управление балансом"
+  balance:
+    description: "Команда для просмотра баланса"
+  pay:
+    description: "Команда для передачи денег"
+
+permissions:
+  justmoney.justmoney:
+    description: "Право на управление балансом"
+    default: op
+  justmoney.balance:
+    description: "Право на просмотр баланса"
+    default: true
+  justmoney.pay:
+    description: "Право на передачу денег"
+    default: true
