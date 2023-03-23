@@ -37,6 +37,10 @@ public class BalanceManager {
             return false;
         }
 
+        if (amount.compareTo(BigInteger.ZERO) < 0) {
+            return false;
+        }
+
         amount2 = amount2.add(amount);
 
         config.set("balances." + player1, amount1.toString());

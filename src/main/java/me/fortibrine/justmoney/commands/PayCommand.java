@@ -65,16 +65,24 @@ public class PayCommand implements CommandExecutor {
             return true;
         }
 
-        BalanceManager.pay(player.getName(), args[0], amount);
+        if (BalanceManager.pay(player.getName(), args[0], amount)) {
 
-        config.getStringList("pay.pay").forEach(new Consumer<String>() {
-            @Override
-            public void accept(String s) {
-                sender.sendMessage(s
-                        .replace("%amount", amount.toString())
-                        .replace("%player", args[1]));
-            }
-        });
+            config.getStringList("pay.pay").forEach(new Consumer<String>() {
+                @Override
+                public void accept(String s) {
+                    sender.sendMessage(s
+                            .replace("%amount", amount.toString())
+                            .replace("%player", args[1]));
+                }
+            });
+        } else {
+            config.getStringList("pay.error").forEach(new Consumer<String>() {
+                @Override
+                public void accept(String s) {
+                    sender.sendMessage(s);
+                }
+            });
+        }
 
         return true;
     }
